@@ -12,6 +12,7 @@ import ButtonBar from './components/ButtonBar';
 import ThemeSwitcher from './components/ThemeSwitcher';
 import BookingsTable from './components/BookingsTable';
 import Icon from './components/Icon';
+import { Select } from '@refinitiv-ui/elements/select';
 
 import packageJson from '../package.json';
 import { getHost } from './services/hostService';
@@ -242,7 +243,29 @@ function App() {
             <Icon className='mr-2' icon='home'></Icon> Silom Bangkok Hotel - Powered By TRAVELOGO v
             {packageJson.version}
           </div>
-          <ThemeSwitcher></ThemeSwitcher>
+          <div className='flex space-x-4'>
+            <ef-Select placeholder='Currency'>
+              <ef-item value='USD' role='option' selected>
+                USD ($)
+              </ef-item>
+              <ef-item value='EUR' role='option'>
+                EUR (€)
+              </ef-item>
+              <ef-item value='GBP' role='option'>
+                GBP (£)
+              </ef-item>
+              <ef-item value='AUD' role='option'>
+                AUD ($)
+              </ef-item>
+              <ef-item value='CNY' role='option'>
+                CNY (¥)
+              </ef-item>
+              <ef-item value='JPY' role='option'>
+                JPY (¥)
+              </ef-item>
+            </ef-Select>
+            <ThemeSwitcher></ThemeSwitcher>
+          </div>
         </div>
       </Header>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 grid-rows-1 gap-4'>
